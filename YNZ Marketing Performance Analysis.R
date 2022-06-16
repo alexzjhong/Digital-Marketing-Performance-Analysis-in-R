@@ -10,16 +10,16 @@ library(tidyverse)
 library(lubridate)
 library(PerformanceAnalytics)
 
-#########
+#################
 #LOAD DATASET
-#########
+#################
 
 #import Google Ads date from .csv file#
 googleads <- read.csv("googleads.csv")
 
-#########
+#################
 #Data Cleaning
-#########
+#################
 
 ##lower case channel
 googleads$channel <- tolower(googleads$channel)
@@ -46,5 +46,8 @@ yaconsales$week = lubridate::week(yaconsales$order_date)
 adperf <- read.csv("adperformance.csv")
 
 ##Check Ad Performance and Correlation with Visual
-
 chart.Correlation(adperf, histogram = TRUE, pch=19)
+
+#################
+#THE END
+#################
